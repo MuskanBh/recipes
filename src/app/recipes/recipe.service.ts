@@ -1,4 +1,5 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.model';
@@ -7,7 +8,7 @@ import { Recipe } from './recipe.model';
   providedIn: 'root'
 })
 export class RecipeService {
-  recipeSelected= new EventEmitter<Recipe>();
+  recipeSelected= new Subject<Recipe>();
   private recipes: Recipe[]=[
     new Recipe('A Sample Recipe', 'This is a description', 'https://www.vadigran.com/media/website_image_4by3_2400/assets/c15e4176-7404-11ea-83f7-00505697ce7a/5411468121360.jpeg', [
       new Ingredient('Banana', 10)
@@ -18,6 +19,9 @@ export class RecipeService {
 
   getRecipes(){
     return this.recipes.slice();
+  }
+  getRecipe(index: number){
+    return this.recipes[index];
   }
   constructor(private shoppingListService: ShoppingListService) { }
   addIngredientsToShoppingList(ingredients: Ingredient[]){
