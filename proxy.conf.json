@@ -1,0 +1,10 @@
+{
+  "/posts": {
+    "target": "https://recipe-book-9f92f-default-rtdb.firebaseio.com",
+    "secure": true,
+    "pathRewrite": {
+    "^/posts": ""
+  },
+    "changeOrigin": true
+  }
+}
