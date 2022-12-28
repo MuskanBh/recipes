@@ -63,6 +63,7 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+
           "configurations": {
             "production": {
               "browserTarget": "recipes:build:production"
@@ -77,6 +78,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "recipes:build"
+
           }
         },
         "test": {
