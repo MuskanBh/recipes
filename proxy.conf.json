@@ -1,6 +1,7 @@
 {
   "/posts": {
-    "target": "https://recipe-book-9f92f-default-rtdb.firebaseio.com",
+    "target": ["https://recipe-book-9f92f-default-rtdb.firebaseio.com",
+    "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAvu_dnGmnApamaSpW3Cb-BINjFhwtzHCI"],
     "secure": true,
     "pathRewrite": {
     "^/posts": ""
